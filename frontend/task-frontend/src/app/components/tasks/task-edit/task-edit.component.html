@@ -1,0 +1,19 @@
+<mat-card>
+  <h2>Edit Task</h2>
+
+  <mat-form-field appearance="fill" style="width:100%; margin-bottom:12px;">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="title" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width:100%; margin-bottom:12px;">
+    <mat-label>Description</mat-label>
+    <textarea matInput rows="4" [(ngModel)]="description"></textarea>
+  </mat-form-field>
+
+  <mat-checkbox [(ngModel)]="completed">Completed</mat-checkbox>
+
+  <div style="margin-top:12px;">
+    <button mat-raised-button color="primary" (click)="update()">Save</button>
+  </div>
+</mat-card>

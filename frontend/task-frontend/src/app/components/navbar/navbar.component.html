@@ -1,0 +1,7 @@
+<nav>
+  <a mat-button routerLink="/tasks">Tasks</a>
+  <a mat-button routerLink="/tasks/create">Create</a>
+  <a mat-button routerLink="/login" *ngIf="!auth.isLoggedIn()">Login</a>
+  <a mat-button routerLink="/signup" *ngIf="!auth.isLoggedIn()">Signup</a>
+  <button mat-raised-button color="accent" *ngIf="auth.isLoggedIn()" (click)="logout()">Logout</button>
+</nav>

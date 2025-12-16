@@ -1,0 +1,15 @@
+<mat-card>
+  <h2>Your Tasks</h2>
+  <div *ngIf="tasks.length === 0">No tasks yet — <a routerLink="/tasks/create">create one</a></div>
+
+  <div *ngFor="let t of tasks" style="display:flex; align-items:center; justify-content:space-between; margin-top:12px;">
+    <div>
+      <div><strong>{{t.title}}</strong> <span *ngIf="t.completed" style="color:green">(Done)</span></div>
+      <div>{{t.description}}</div>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <button mat-stroked-button color="primary" (click)="edit(t.id)">Edit</button>
+      <button mat-stroked-button color="warn" (click)="delete(t.id)">Delete</button>
+    </div>
+  </div>
+</mat-card>
